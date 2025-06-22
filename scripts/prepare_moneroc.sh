@@ -6,9 +6,9 @@ cd "$(dirname "$0")"
 
 if [[ ! -d "monero_c/.git" ]];
 then
-    git clone https://github.com/mrcyjanek/monero_c --branch master monero_c
+    git clone https://github.com/amory1997/monero_c  monero_c
     cd monero_c
-    git checkout a27fbcb24d91143715ed930a05aaa4d853fba1f2
+    git checkout 0d93b1827b7c3b39583d57769824f75d710c8d00
     git reset --hard
     git submodule update --init --force --recursive
     ./apply_patches.sh monero
