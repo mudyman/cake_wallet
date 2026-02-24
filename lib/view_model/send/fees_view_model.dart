@@ -75,6 +75,7 @@ abstract class FeesViewModelBase extends WalletChangeListenerViewModel with Stor
   bool get isLowFee {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.wownero:
       case WalletType.haven:
       case WalletType.zano:
@@ -171,6 +172,7 @@ abstract class FeesViewModelBase extends WalletChangeListenerViewModel with Stor
   void setDefaultTransactionPriority() {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.haven:
       case WalletType.wownero:
       case WalletType.zano:

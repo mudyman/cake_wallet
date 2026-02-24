@@ -724,6 +724,7 @@ abstract class ExchangeViewModelBase extends WalletChangeListenerViewModel with 
   void _initialPairBasedOnWallet() {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         depositCurrency = CryptoCurrency.xmr;
         receiveCurrency = CryptoCurrency.btc;
         break;

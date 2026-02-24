@@ -94,6 +94,7 @@ abstract class OutputBase with Store {
         int _amount = 0;
         switch (walletType) {
           case WalletType.monero:
+    case WalletType.xmc:
             _amount = monero!.formatterMoneroParseAmount(amount: _cryptoAmount);
             break;
           case WalletType.bitcoin:
@@ -294,6 +295,7 @@ abstract class OutputBase with Store {
 
     switch (_wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.ethereum:
       case WalletType.polygon:
       case WalletType.solana:

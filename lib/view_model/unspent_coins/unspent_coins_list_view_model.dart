@@ -117,6 +117,7 @@ abstract class UnspentCoinsListViewModelBase with Store {
   List<Unspent> _getUnspents() {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return monero!.getUnspents(wallet);
       case WalletType.wownero:
         return wownero!.getUnspents(wallet);
@@ -134,6 +135,7 @@ abstract class UnspentCoinsListViewModelBase with Store {
     List<Unspent> _getSpecificUnspents(UnspentCoinType overrideCoinTypeToSpendFrom) {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return monero!.getUnspents(wallet);
       case WalletType.wownero:
         return wownero!.getUnspents(wallet);

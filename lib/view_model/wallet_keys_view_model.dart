@@ -114,6 +114,7 @@ abstract class WalletKeysViewModelBase with Store {
 
     switch (_wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         keys = monero!.getKeys(_wallet);
         break;
       case WalletType.wownero:
@@ -225,6 +226,7 @@ abstract class WalletKeysViewModelBase with Store {
   String get _scheme {
     switch (_wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return 'monero-wallet';
       case WalletType.bitcoin:
         return 'bitcoin-wallet';

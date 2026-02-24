@@ -261,6 +261,7 @@ abstract class SendViewModelBase extends WalletChangeListenerViewModel with Stor
       case WalletType.litecoin:
       case WalletType.bitcoinCash:
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.wownero:
       case WalletType.decred:
         return wallet.formatCryptoAmount(
@@ -651,6 +652,7 @@ abstract class SendViewModelBase extends WalletChangeListenerViewModel with Stor
         );
 
       case WalletType.monero:
+    case WalletType.xmc:
         return monero!
             .createMoneroTransactionCreationCredentials(outputs: outputs, priority: priority!);
 

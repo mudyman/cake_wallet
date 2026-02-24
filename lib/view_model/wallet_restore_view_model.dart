@@ -49,6 +49,7 @@ abstract class WalletRestoreViewModelBase extends WalletCreationVM with Store {
             type: type, isRecovery: true) {
     switch (type) {
       case WalletType.monero:
+    case WalletType.xmc:
         availableModes = WalletRestoreMode.values;
         break;
       case WalletType.nano:
@@ -108,6 +109,7 @@ abstract class WalletRestoreViewModelBase extends WalletCreationVM with Store {
       final seed = options['seed'] as String;
       switch (type) {
         case WalletType.monero:
+    case WalletType.xmc:
           return monero!.createMoneroRestoreWalletFromSeedCredentials(
               name: name, height: height, mnemonic: seed, password: password, passphrase: passphrase??'');
         case WalletType.bitcoin:
@@ -199,6 +201,7 @@ abstract class WalletRestoreViewModelBase extends WalletCreationVM with Store {
 
       switch (type) {
         case WalletType.monero:
+    case WalletType.xmc:
           return monero!.createMoneroRestoreWalletFromKeysCredentials(
             name: name,
             height: height,

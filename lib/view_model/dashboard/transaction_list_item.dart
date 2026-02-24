@@ -63,6 +63,7 @@ class TransactionListItem extends ActionListItem with Keyable {
   String get formattedPendingStatus {
     switch (balanceViewModel.wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.haven:
       case WalletType.zano:
         if (transaction.confirmations >= 0 && transaction.confirmations < 10) {
@@ -155,6 +156,7 @@ class TransactionListItem extends ActionListItem with Keyable {
 
     switch (balanceViewModel.wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         amount = calculateFiatAmountRaw(
             cryptoAmount: monero!.formatterMoneroAmountToDouble(amount: transaction.amount),
             price: price);

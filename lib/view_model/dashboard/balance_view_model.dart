@@ -304,6 +304,7 @@ abstract class BalanceViewModelBase with Store {
   bool _hasAdditionalBalanceForWalletType(WalletType type) {
     switch (type) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.wownero:
       case WalletType.zano:
       case WalletType.decred:

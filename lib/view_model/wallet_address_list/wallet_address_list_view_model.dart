@@ -320,6 +320,7 @@ abstract class WalletAddressListViewModelBase extends WalletChangeListenerViewMo
   PaymentURI get uri {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return MoneroURI(amount: amount, address: address.address);
       case WalletType.haven:
         return HavenURI(amount: amount, address: address.address);
@@ -569,6 +570,7 @@ abstract class WalletAddressListViewModelBase extends WalletChangeListenerViewMo
   String get accountLabel {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return monero!.getCurrentAccount(wallet).label;
       case WalletType.wownero:
         wownero!.getCurrentAccount(wallet).label;

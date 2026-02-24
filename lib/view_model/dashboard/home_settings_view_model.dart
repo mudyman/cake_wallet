@@ -209,6 +209,7 @@ abstract class HomeSettingsViewModelBase with Store {
       case WalletType.zano:
       case WalletType.banano:
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.none:
       case WalletType.bitcoin:
       case WalletType.litecoin:

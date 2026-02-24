@@ -163,6 +163,7 @@ abstract class LedgerViewModelBase with Store {
   void setLedger(WalletBase wallet) {
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return monero!.setLedgerConnection(wallet, connection);
       case WalletType.bitcoin:
       case WalletType.litecoin:

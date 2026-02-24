@@ -51,6 +51,7 @@ abstract class TransactionDetailsViewModelBase with Store {
     // TODO: can be cleaned further
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.xmc:
         _addMoneroListItems(tx, dateFormat);
         break;
@@ -167,6 +168,7 @@ abstract class TransactionDetailsViewModelBase with Store {
   String _explorerUrl(WalletType type, String txId) {
     switch (type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return 'https://monero.com/tx/${txId}';
       case WalletType.bitcoin:
         return 'https://mempool.cakewallet.com/${wallet.isTestnet ? "testnet/" : ""}tx/${txId}';
@@ -202,6 +204,7 @@ abstract class TransactionDetailsViewModelBase with Store {
   String _explorerDescription(WalletType type) {
     switch (type) {
       case WalletType.monero:
+    case WalletType.xmc:
         return S.current.view_transaction_on + 'Monero.com';
       case WalletType.bitcoin:
         return S.current.view_transaction_on + 'mempool.space';

@@ -124,6 +124,7 @@ class DFXBuyProvider extends BuyProvider {
       case WalletType.polygon:
         return await wallet.signMessage(message);
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.litecoin:
       case WalletType.bitcoin:
       case WalletType.bitcoinCash:

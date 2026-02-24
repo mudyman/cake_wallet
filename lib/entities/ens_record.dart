@@ -29,6 +29,7 @@ class EnsRecord {
       if (wallet != null) {
         switch (wallet.type) {
           case WalletType.monero:
+    case WalletType.xmc:
             return await ens.withName(name).getCoinAddress(CoinType.XMR);
           case WalletType.bitcoin:
             return await ens.withName(name).getCoinAddress(CoinType.BTC);

@@ -845,6 +845,7 @@ abstract class DashboardViewModelBase with Store {
     }
     switch (wallet.type) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.litecoin:
       case WalletType.bitcoin:
       case WalletType.bitcoinCash:

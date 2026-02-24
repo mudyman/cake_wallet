@@ -151,6 +151,7 @@ class AddressFormatter {
   static int _getChunkSize(WalletType walletType) {
     switch (walletType) {
       case WalletType.monero:
+    case WalletType.xmc:
       case WalletType.wownero:
       case WalletType.zano:
         return 6;

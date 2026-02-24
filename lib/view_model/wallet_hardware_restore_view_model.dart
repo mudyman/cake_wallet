@@ -106,6 +106,7 @@ abstract class WalletHardwareRestoreViewModelBase extends WalletCreationVM with 
         credentials = polygon!.createPolygonHardwareWalletCredentials(name: name, hwAccountData: selectedAccount!);
         break;
       case WalletType.monero:
+    case WalletType.xmc:
         final password = walletPassword ?? generateWalletPassword();
 
         credentials = monero!.createMoneroRestoreWalletFromHardwareCredentials(
