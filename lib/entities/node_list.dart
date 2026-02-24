@@ -10,6 +10,9 @@ Future<List<Node>> loadDefaultNodes(WalletType type) async {
     case WalletType.monero:
       path = 'assets/node_list.yml';
       break;
+    case WalletType.xmc:
+      path = 'assets/xmc_node_list.yml';
+      break;
     case WalletType.bitcoin:
       path = 'assets/bitcoin_electrum_server_list.yml';
       break;

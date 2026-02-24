@@ -8,6 +8,7 @@ int mnemonicLength(WalletType type) {
 
   switch (type) {
     case WalletType.monero:
+    case WalletType.xmc:
       return moneroMnemonicLength;
     case WalletType.bitcoin:
       return bitcoinMnemonicLength;

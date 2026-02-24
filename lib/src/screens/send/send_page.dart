@@ -441,7 +441,7 @@ class SendPage extends BasePage {
                                 }
                               }
 
-                              if (sendViewModel.wallet.type == WalletType.monero) {
+                              if (sendViewModel.wallet.type == WalletType.monero || sendViewModel.wallet.type == WalletType.xmc) {
                                 int amount = 0;
                                 for (var item in sendViewModel.outputs) {
                                   amount += item.formattedCryptoAmount;

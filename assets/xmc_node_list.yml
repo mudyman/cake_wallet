@@ -1,0 +1,17 @@
+# XMC (Monero Classic) Node List
+# Based on XMC-V4 network (Monero Classic)
+-
+  uri: node.xmc-community.org:18081
+  is_default: true
+  trusted: true
+  useSSL: false
+-
+  uri: xmc1.cryptomarket.io:18081
+  is_default: false
+  trusted: false
+  useSSL: false
+-
+  uri: xmc-node.cakewallet.com:18081
+  is_default: false
+  trusted: true
+  useSSL: true

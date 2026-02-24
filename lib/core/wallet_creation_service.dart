@@ -65,7 +65,7 @@ class WalletCreationService {
     }
     final wallet = await _service!.create(credentials, isTestnet: isTestnet);
 
-    if (wallet.type == WalletType.monero) {
+    if (wallet.type == WalletType.monero || wallet.type == WalletType.xmc) {
       await sharedPreferences.setBool(
           PreferencesKey.moneroWalletUpdateV1Key(wallet.name), _isNewMoneroWalletPasswordUpdated);
     }
@@ -84,6 +84,7 @@ class WalletCreationService {
       case WalletType.tron:
         return true;
       case WalletType.monero:
+      case WalletType.xmc:
       case WalletType.wownero:
       case WalletType.none:
       case WalletType.haven:
@@ -106,7 +107,7 @@ class WalletCreationService {
 
     final wallet = await _service!.restoreFromKeys(credentials, isTestnet: isTestnet);
 
-    if (wallet.type == WalletType.monero) {
+    if (wallet.type == WalletType.monero || wallet.type == WalletType.xmc) {
       await sharedPreferences.setBool(
           PreferencesKey.moneroWalletUpdateV1Key(wallet.name), _isNewMoneroWalletPasswordUpdated);
     }
@@ -125,7 +126,7 @@ class WalletCreationService {
 
     final wallet = await _service!.restoreFromSeed(credentials, isTestnet: isTestnet);
 
-    if (wallet.type == WalletType.monero) {
+    if (wallet.type == WalletType.monero || wallet.type == WalletType.xmc) {
       await sharedPreferences.setBool(
           PreferencesKey.moneroWalletUpdateV1Key(wallet.name), _isNewMoneroWalletPasswordUpdated);
     }
@@ -140,7 +141,7 @@ class WalletCreationService {
     await keyService.saveWalletPassword(password: password, walletName: credentials.name);
     final wallet = await _service!.restoreFromHardwareWallet(credentials);
 
-    if (wallet.type == WalletType.monero) {
+    if (wallet.type == WalletType.monero || wallet.type == WalletType.xmc) {
       await sharedPreferences.setBool(
           PreferencesKey.moneroWalletUpdateV1Key(wallet.name), _isNewMoneroWalletPasswordUpdated);
     }

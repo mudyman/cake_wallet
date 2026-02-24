@@ -256,6 +256,7 @@ abstract class SettingsStoreBase with Store {
       final String? key;
       switch (change.key) {
         case WalletType.monero:
+        case WalletType.xmc:
         case WalletType.wownero:
           key = PreferencesKey.moneroTransactionPriority;
           break;
@@ -1698,6 +1699,7 @@ abstract class SettingsStoreBase with Store {
             PreferencesKey.currentLitecoinElectrumSererIdKey, node.key as int);
         break;
       case WalletType.monero:
+      case WalletType.xmc:
         await _sharedPreferences.setInt(PreferencesKey.currentNodeIdKey, node.key as int);
         break;
       case WalletType.haven:

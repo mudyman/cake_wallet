@@ -69,7 +69,7 @@ class OtherSettingsPage extends BasePage {
                   handler: (BuildContext context) =>
                       Navigator.of(context).pushNamed(Routes.devMoneroBackgroundSync),
                 ),
-              if (FeatureFlag.hasDevOptions && [WalletType.monero, WalletType.wownero, WalletType.zano].contains(_otherSettingsViewModel.walletType))
+              if (FeatureFlag.hasDevOptions && [WalletType.monero, WalletType.xmc, WalletType.wownero, WalletType.zano].contains(_otherSettingsViewModel.walletType))
                 SettingsCellWithArrow(
                   title: '[dev] xmr call profiler',
                   handler: (BuildContext context) =>

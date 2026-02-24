@@ -46,6 +46,7 @@ class _PerformanceDebugState extends State<PerformanceDebug> {
 
   late ProfilableWallet wallet = switch (dashboardViewModel.wallet.type) {
     WalletType.monero => ProfilableWallet.monero,
+    WalletType.xmc => ProfilableWallet.monero,
     WalletType.wownero => ProfilableWallet.wownero,
     WalletType.zano => ProfilableWallet.zano,
     _ => throw Exception("Unknown wallet type"),

@@ -229,6 +229,8 @@ class MenuWidgetState extends State<MenuWidget> {
     switch (type) {
       case WalletType.monero:
         return moneroIcon;
+      case WalletType.xmc:
+        return moneroIcon;
       case WalletType.bitcoin:
         return bitcoinIcon;
       case WalletType.litecoin:

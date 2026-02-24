@@ -693,8 +693,8 @@ class ExchangePage extends BasePage {
         currencies: exchangeViewModel.depositCurrencies,
         onCurrencySelected: (currency) {
           // FIXME: need to move it into view model
-          if (currency == CryptoCurrency.xmr &&
-              exchangeViewModel.wallet.type != WalletType.monero) {
+          if ((currency == CryptoCurrency.xmr || currency == CryptoCurrency.xmc) &&
+              exchangeViewModel.wallet.type != WalletType.monero && exchangeViewModel.wallet.type != WalletType.xmc) {
             showPopUp<void>(
                 context: context,
                 builder: (dialogContext) {

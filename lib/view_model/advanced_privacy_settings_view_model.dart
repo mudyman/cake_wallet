@@ -51,6 +51,7 @@ abstract class AdvancedPrivacySettingsViewModelBase with Store {
         return _settingsStore.nanoSeedType == NanoSeedType.bip39;
 
       case WalletType.monero:
+      case WalletType.xmc:
       case WalletType.wownero:
       case WalletType.none:
       case WalletType.haven:
@@ -62,6 +63,7 @@ abstract class AdvancedPrivacySettingsViewModelBase with Store {
 
   bool get isMoneroSeedTypeOptionsEnabled => [
         WalletType.monero,
+        WalletType.xmc,
         WalletType.wownero,
       ].contains(type);
 

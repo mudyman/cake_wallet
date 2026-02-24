@@ -12,6 +12,7 @@ import 'package:cw_core/wallet_type.dart';
 List<TransactionPriority> priorityForWalletType(WalletType type) {
   switch (type) {
     case WalletType.monero:
+    case WalletType.xmc:
       return monero!.getTransactionPriorities();
     case WalletType.wownero:
       return wownero!.getTransactionPriorities();

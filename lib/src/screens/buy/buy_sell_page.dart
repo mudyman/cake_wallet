@@ -397,7 +397,7 @@ class BuySellPage extends BasePage {
         isAmountEstimated: false,
         currencyRowPadding: EdgeInsets.zero,
         addressRowPadding: EdgeInsets.zero,
-        isMoneroWallet: buySellViewModel.wallet == WalletType.monero,
+        isMoneroWallet: buySellViewModel.wallet == WalletType.monero || buySellViewModel.wallet == WalletType.xmc,
         showAddressField: false,
         showLimitsField: false,
         currencies: buySellViewModel.fiatCurrencies,
@@ -436,7 +436,7 @@ class BuySellPage extends BasePage {
         showLimitsField: false,
         currencyRowPadding: EdgeInsets.zero,
         addressRowPadding: EdgeInsets.zero,
-        isMoneroWallet: buySellViewModel.wallet == WalletType.monero,
+        isMoneroWallet: buySellViewModel.wallet == WalletType.monero || buySellViewModel.wallet == WalletType.xmc,
         currencies: buySellViewModel.cryptoCurrencies,
         onCurrencySelected: (currency) => buySellViewModel.changeCryptoCurrency(currency: currency),
         imageArrow: Image.asset(

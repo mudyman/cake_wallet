@@ -585,13 +585,13 @@ class _WalletRestorePageBodyState extends State<_WalletRestorePageBody>
     if (seedWords.length == 14 && walletRestoreViewModel.type == WalletType.wownero) return true;
     if (seedWords.length == 26 && walletRestoreViewModel.type == WalletType.zano) return true;
 
-    if (seedWords.length == 12 && walletRestoreViewModel.type == WalletType.monero) {
+    if (seedWords.length == 12 && (walletRestoreViewModel.type == WalletType.monero || walletRestoreViewModel.type == WalletType.xmc)) {
       return walletRestoreFromSeedFormKey.currentState?.blockchainHeightKey.currentState
               ?.restoreHeightController.text.isNotEmpty ==
           true;
     }
 
-    if ([WalletType.monero, WalletType.wownero, WalletType.haven]
+    if ([WalletType.monero, WalletType.xmc, WalletType.wownero, WalletType.haven]
             .contains(walletRestoreViewModel.type) &&
         seedWords.length == WalletRestoreViewModelBase.moneroSeedMnemonicLength) {
       return true;

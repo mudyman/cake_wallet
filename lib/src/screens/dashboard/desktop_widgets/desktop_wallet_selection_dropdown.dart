@@ -157,6 +157,8 @@ class _DesktopWalletSelectionDropDownState extends State<DesktopWalletSelectionD
         return bitcoinIcon;
       case WalletType.monero:
         return moneroIcon;
+      case WalletType.xmc:
+        return moneroIcon;
       case WalletType.wownero:
         return wowneroIcon;
       case WalletType.litecoin:

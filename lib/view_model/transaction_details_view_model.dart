@@ -51,6 +51,7 @@ abstract class TransactionDetailsViewModelBase with Store {
     // TODO: can be cleaned further
     switch (wallet.type) {
       case WalletType.monero:
+      case WalletType.xmc:
         _addMoneroListItems(tx, dateFormat);
         break;
       case WalletType.bitcoin:

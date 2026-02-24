@@ -874,6 +874,7 @@ Future<void> setup({
   getIt.registerFactory<MoneroAccountListViewModel>(() {
     final wallet = getIt.get<AppStore>().wallet!;
     if (wallet.type == WalletType.monero ||
+        wallet.type == WalletType.xmc ||
         wallet.type == WalletType.wownero ||
         wallet.type == WalletType.haven) {
       return MoneroAccountListViewModel(wallet,getIt.get<SettingsStore>());
@@ -1114,6 +1115,7 @@ Future<void> setup({
   getIt.registerFactoryParam<WalletService, WalletType, void>((WalletType param1, __) {
     switch (param1) {
       case WalletType.monero:
+      case WalletType.xmc:
         return monero!.createMoneroWalletService(_walletInfoSource, _unspentCoinsInfoSource);
       case WalletType.bitcoin:
         return bitcoin!.createBitcoinWalletService(

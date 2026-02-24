@@ -64,6 +64,7 @@ abstract class WalletNewVMBase extends WalletCreationVM with Store {
 
     switch (type) {
       case WalletType.monero:
+      case WalletType.xmc:
         return monero!.createMoneroNewWalletCredentials(
           name: name,
           language: options!.first as String,

@@ -593,6 +593,8 @@ String _getDefaultNodeUri(WalletType type) {
   switch (type) {
     case WalletType.monero:
       return newCakeWalletMoneroUri;
+    case WalletType.xmc:
+      return 'node.xmc-community.org:18081';
     case WalletType.bitcoin:
       return newCakeWalletBitcoinUri;
     case WalletType.litecoin:

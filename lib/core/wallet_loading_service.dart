@@ -45,7 +45,7 @@ class WalletLoadingService {
       await keyService.deleteWalletPassword(walletName: name);
 
       // set shared preferences flag based on previous wallet name
-      if (type == WalletType.monero) {
+      if (type == WalletType.monero || type == WalletType.xmc) {
         final oldNameKey = PreferencesKey.moneroWalletUpdateV1Key(name);
         final isPasswordUpdated = sharedPreferences.getBool(oldNameKey) ?? false;
         final newNameKey = PreferencesKey.moneroWalletUpdateV1Key(newName);
@@ -66,7 +66,7 @@ class WalletLoadingService {
       final walletPassword = password ?? (await keyService.getWalletPassword(walletName: name));
       final wallet = await walletService.openWallet(name, walletPassword);
 
-      if (type == WalletType.monero) {
+      if (type == WalletType.monero || type == WalletType.xmc) {
         await updateMoneroWalletPassword(wallet);
       }
 

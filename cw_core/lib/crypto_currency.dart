@@ -27,6 +27,7 @@ class CryptoCurrency extends EnumerableItem<int> with Serializable<int> implemen
 
   static const all = [
     CryptoCurrency.xmr,
+    CryptoCurrency.xmc,
     CryptoCurrency.ada,
     CryptoCurrency.bch,
     CryptoCurrency.bnb,
@@ -132,6 +133,7 @@ class CryptoCurrency extends EnumerableItem<int> with Serializable<int> implemen
 
   // title, tag (if applicable), fullName (if unique), raw, name, iconPath
   static const xmr = CryptoCurrency(title: 'XMR', fullName: 'Monero', raw: 0, name: 'xmr', iconPath: 'assets/images/monero_icon.png', decimals: 12);
+  static const xmc = CryptoCurrency(title: 'XMC', fullName: 'Monero Classic', raw: 99, name: 'xmc', iconPath: 'assets/images/monero_classic_icon.png', decimals: 12);
   static const ada = CryptoCurrency(title: 'ADA', fullName: 'Cardano', raw: 1, name: 'ada', iconPath: 'assets/images/ada_icon.png', decimals: 6);
   static const bch = CryptoCurrency(title: 'BCH', fullName: 'Bitcoin Cash', raw: 2, name: 'bch', iconPath: 'assets/images/bch_icon.png', decimals: 8);
   static const bnb = CryptoCurrency(title: 'BNB', tag: 'BSC', fullName: 'Binance Coin', raw: 3, name: 'bnb', iconPath: 'assets/images/bnb_icon.png', decimals: 8);

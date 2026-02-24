@@ -6,6 +6,7 @@ part 'wallet_type.g.dart';
 
 const walletTypes = [
   WalletType.monero,
+  WalletType.xmc,
   WalletType.bitcoin,
   WalletType.litecoin,
   WalletType.haven,
@@ -24,6 +25,9 @@ const walletTypes = [
 enum WalletType {
   @HiveField(0)
   monero,
+
+  @HiveField(15)
+  xmc,
 
   @HiveField(1)
   none,
@@ -72,6 +76,8 @@ int serializeToInt(WalletType type) {
   switch (type) {
     case WalletType.monero:
       return 0;
+    case WalletType.xmc:
+      return 14;
     case WalletType.bitcoin:
       return 1;
     case WalletType.litecoin:
@@ -107,6 +113,8 @@ WalletType deserializeFromInt(int raw) {
   switch (raw) {
     case 0:
       return WalletType.monero;
+    case 14:
+      return WalletType.xmc;
     case 1:
       return WalletType.bitcoin;
     case 2:
@@ -143,6 +151,8 @@ String walletTypeToString(WalletType type) {
   switch (type) {
     case WalletType.monero:
       return 'Monero';
+    case WalletType.xmc:
+      return 'XMC';
     case WalletType.bitcoin:
       return 'Bitcoin';
     case WalletType.litecoin:
@@ -178,6 +188,8 @@ String walletTypeToDisplayName(WalletType type) {
   switch (type) {
     case WalletType.monero:
       return 'Monero (XMR)';
+    case WalletType.xmc:
+      return 'Monero Classic (XMC)';
     case WalletType.bitcoin:
       return 'Bitcoin (BTC)';
     case WalletType.litecoin:
@@ -213,6 +225,8 @@ CryptoCurrency walletTypeToCryptoCurrency(WalletType type, {bool isTestnet = fal
   switch (type) {
     case WalletType.monero:
       return CryptoCurrency.xmr;
+    case WalletType.xmc:
+      return CryptoCurrency.xmc;
     case WalletType.bitcoin:
       if (isTestnet) {
         return CryptoCurrency.tbtc;
@@ -252,6 +266,8 @@ WalletType? cryptoCurrencyToWalletType(CryptoCurrency type) {
   switch (type) {
     case CryptoCurrency.xmr:
       return WalletType.monero;
+    case CryptoCurrency.xmc:
+      return WalletType.xmc;
     case CryptoCurrency.btc:
       return WalletType.bitcoin;
     case CryptoCurrency.ltc:
