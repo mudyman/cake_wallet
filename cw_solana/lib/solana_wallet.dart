@@ -66,7 +66,7 @@ abstract class SolanaWalletBase
     );
 
     if (!CakeHive.isAdapterRegistered(SPLToken.typeId)) {
-      CakeHive.registerAdapter(SPLTokenAdapter());
+      // CakeHive.registerAdapter(SPLTokenAdapter());  // Stubbed for XMC build
     }
 
     _sharedPrefs.complete(SharedPreferences.getInstance());

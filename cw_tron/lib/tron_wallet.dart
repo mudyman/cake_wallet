@@ -63,7 +63,7 @@ abstract class TronWalletBase
         walletInfo: walletInfo, password: password, encryptionFileUtils: encryptionFileUtils);
 
     if (!CakeHive.isAdapterRegistered(TronToken.typeId)) {
-      CakeHive.registerAdapter(TronTokenAdapter());
+      // CakeHive.registerAdapter(TronTokenAdapter());  // Stubbed for XMC build
     }
   }
 
